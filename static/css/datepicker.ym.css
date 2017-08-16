@@ -1,0 +1,9 @@
+.ui-datepicker-calendar{
+  display:none;
+}
+.ui-datepicker-year{
+  width: 45%;color: black;
+}
+.ui-datepicker-month{
+  width: 45%;color: black;
+}

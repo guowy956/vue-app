@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<link rel="shortcut icon" href="favicon.ico">
+<link href="../../static\css\font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="../../static\css\animate.min.css" rel="stylesheet">
+<link href="../../static\css\style.min.css?v=4.1.0" rel="stylesheet">
+<link href="../../static\plugins\zTree_v3\css\zTreeStyle\zTreeStyle.css" rel="stylesheet">
+<link rel="stylesheet" href="../../static\css\jquery.filer-dragdropbox-theme.css">
+<link rel="stylesheet" href="../../static\css\jquery.filer.css">
+<link rel="stylesheet" href="../../static\css\jquery-filer.css">
+<link rel="stylesheet" href="../../static/css/swiper/swiper-3.4.2.min.css">
+<link href="../../static/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="../../static\css\jquery.dataTables.min.css">
+<script type="text/javascript" src="../../static\js\lun\jquery.js"></script>
+<script type="text/javascript" src="../../static\js\plugins\metisMenu\jquery.metisMenu.js"></script>
+<script type="text/javascript" src="../../static\js\plugins\slimscroll\jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="../../static\js\plugins\layer\layer.min.js"></script>
+<script type="text/javascript" src="../../static\js\hplus.min.js?v=4.1.0"></script>
+<script type="text/javascript" src="../../static\js\contabs.min.js"></script>
+<script type="text/javascript" src="../../static\js\plugins\pace\pace.min.js"></script>
+<script type="text/javascript" src="../../static\js\plugins\validate\jquery.validate.min.js"></script>
+<script type="text/javascript" src="../../static\js\plugins\validate\messages_zh.min.js"></script>
+<script type="text/javascript" src="../../static\plugins\zTree_v3\js\jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../static\plugins\zTree_v3\js\jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="../../static\plugins\zTree_v3\js\jquery.ztree.exedit.js"></script>
+<script type="text/javascript" src="../../static\plugins\select2\select2.js"></script>
+<script type="text/javascript" src="../../static\plugins\select2\select2_locale_zh-CN.js"></script>
+<script type="text/javascript" src="../../static\js\Map.js"></script>
+<script type="text/javascript" src="../../static\js\common.js"></script>
+<script type="text/javascript" src="../../static\js\plugins\jqueryFileUpload\vendor\jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../../static\js\plugins\jqueryFileUpload\jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="../../static\js\plugins\jqueryFileUpload\jquery.fileupload.js"></script>
+<script type="text/javascript" src="../../static\js\plugins\iCheck\icheck.min.js"></script>
+<script type="text/javascript" src="../../static\js\toMoney.js"></script>
+<script type="text/javascript" src="../../static\js\loginHandler.js"></script>
+<script type="text/javascript" src="../../static\js\jquery.filer.min.js"></script>
+<script type="text/javascript" src="../../static\js\custom.js"></script>
+<script type="text/javascript" src="../../static/js/swiper/swiper-3.4.2.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/bootstrap-datetimepicker/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../static/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../static/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../static\js\jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../static\js\dataTables.fixedColumns.min.js"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script type="text/javascript" src="../../static\js\lun\jqueryui.js"></script>
+<script type="text/javascript" src="../../static\js\lun\jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="../../static\js\lun\jquery.iviewer.js"></script>
+<link href="../../static\css\lun\jquery.iviewer.css" rel="stylesheet">
+<style type="text/css">
+  #idContainer img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  ul, li {
+    list-style: none;
+  }
+  .tabClick {
+    background: #f3f3f3;
+    overflow: hidden;
+  }
+  .tabClick li {
+    height: 40px;
+    line-height: 40px;
+    width: 50%;
+    float: left;
+    text-align: center;
+  }
+  .tabClick li.active {
+    color: white;
+    transition: 0.1s;
+    font-weight: bold;
+    background-color:gray
+  }
+  .tabList {
+    width: 100%;
+  }
+  .viewer {
+    width: 50%;
+    height: 500px;
+    border: 1px solid black;
+    position: relative;
+  }
+  .wrapper {
+    overflow: hidden;
+  }
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+  <ul class="tabClick">
+    <li class="active" v-on:click="TabClickPic()" ftype="img" id="pic" v-if="isPic_">图片</li>
+    <li v-on:click="TabClickPdf()" ftype="pdf" id="pdf" v-if="isPdf">PDF</li>
+  </ul>
+  <div class="tabCon">
+    <div class="tabBox">
+      <div class="tabList" id="tab_img">
+        <div align="center">
+          <div class="wrapper" >
+            <div id="viewer2" class="viewer" style="width: 70%;" v-if="isShow"></div>
+            <div id="buttonBox" v-if="isShow">
+              <input type="button" value="上一个"  id="chimg_up">
+              <input type="button" value="下一个"  id="chimg_down">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-if="isNull" align="center">暂无数据</div>
+      <div class="tabList" style=" display:none" id="tab_pdf" v-if="id_div">
+        <div id="iframeDiv">
+          <embed src="" id="playControl"  style="width: 100% ; height: 690px" type="application/pdf" />
+          <div id="buttonPdf" align="center" v-if="buttonPdf_">
+            <input type="button" value="上一个"  id="pdf_up">
+            <input type="button" value="下一个"  id="pdf_down">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<script>
+
+  new Vue({
+    el: '#wrap',
+    data: {
+      orderNum:"",
+      accessToken:"",
+      ipPath:"",
+      upFiles_:"",
+      strArray_:[],
+      isPdf:true,
+      isPic_:true,
+      isShow:true,
+      id_div:true,
+      isNull:false,
+      buttonPdf_:true,
+      index:0,
+      filePath:"",
+      flag:"",
+      intercept:[],
+      pdfFile:[],
+      picFile:[],
+    },
+    methods: {
+      clickMe: function(){
+        var _this = this;
+        _this.orderNum = _this.GetQueryString("orderNum");
+        _this.accessToken = _this.GetQueryString("accessToken");
+        _this.ipPath = _this.GetQueryString("ipPath");
+        _this.flag = _this.GetQueryString("flag");
+      },
+      GetQueryString: function (name){
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+      },
+      TabClickPdf: function () {
+        $("#pic").removeClass("active");
+        $("#pdf").addClass("active");
+        var typeStr = $("#pdf").attr("ftype");
+        $("#tab_img").hide();
+        $("#tab_" + typeStr + "").show();
+      },
+      TabClickPic: function () {
+        $("#pdf").removeClass("active");
+        $("#pic").addClass("active");
+        var typeStr = $("#pic").attr("ftype");
+        $("#tab_pdf").hide();
+        $("#tab_" + typeStr + "").show();
+      },
+      setUploadedFiles: function () {
+        var _this = this;
+        var that = this;
+        var picId = _this.orderNum;
+        if (picId) {
+          var url = basePath2 + '/modBankcardRecord/list?orderNum='+_this.orderNum +"&accessToken="+_this.accessToken;
+          $.get(url,function(data){
+            _this.upFiles_=data.data[0];
+            if(_this.upFiles_.fileUploadRelations!=null&& _this.upFiles_.fileUploadRelations!=""){
+              for(var i=0; i< _this.upFiles_.fileUploadRelations.length;i++){
+                var md5 = _this.upFiles_.fileUploadRelations[i].md5;  // md5
+                var purpose =_this.upFiles_.fileUploadRelations[i].purpose;  // 对应名字
+                var suffix =  _this.upFiles_.fileUploadRelations[i].suffix; //后缀
+                if( _this.showName(_this.flag) == purpose){
+                  if(suffix == "pdf"){
+                    _this.pdfFile.push(md5+"/"+suffix);
+                    that.TabClickPdf();
+                  }else{
+                    _this.picFile.push(md5+"/"+suffix);
+                  }
+                }
+              }
+              if((that.pdfFile=="" || that.pdfFile==null)&&(that.picFile=="" || that.picFile == null)){
+                that.isNull=true;
+              }
+              if(that.pdfFile=="" ||that.pdfFile==null){
+                that.isPdf = false;
+              }else{
+                that.isPdf = true;
+                //pdf上下章切换
+                if(that.pdfFile.length <= 1){
+                  that.buttonPdf_ = false;
+                }
+                var _index = 0;
+                var fileShow = that.pdfFile[0];
+                var file_path = that.fileShow_(fileShow);
+                $("#playControl").attr('src', file_path);
+                $("#pdf_up").click(function(){
+                  _index++;
+                  if(_index==that.pdfFile.length){
+                    _index=0;
+                  }
+                  var split = that.pdfFile[_index] ;
+                  var fileShow = split;
+                  var file_path = that.fileShow_(fileShow);
+                  $("#playControl").attr('src', file_path);
+                  return false;
+                });
+                $("#pdf_down").click(function(){
+                  _index--;
+                  if(_index<0){
+                    _index=that.pdfFile.length-1;
+                  }
+                  var split = that.pdfFile[_index] ;
+                  var file_path = that.fileShow_(split);
+                  $("#playControl").attr('src', file_path);
+                  return false;
+                });
+              }
+              //图片上下章切换
+              if(that.picFile=="" || that.picFile == null){
+                that.isShow = false;
+                that.isPic_ = false;
+              }else{
+                that.isPic_ = true;
+                that.isShow = true;
+                var index=0;
+                that.intercept =  that.picFile[0] ;
+                var fileShow = that.picFile[0];
+                var file_path = that.fileShow_(fileShow);
+                var iv2 = $("#viewer2").iviewer(
+                  {
+                    src: file_path,
+                  });
+                $("#chimg_up").click(function(){
+                  index++;
+                  if(index==that.picFile.length){
+                    index=0;
+                  }
+                  var split = that.picFile[index] ;
+                  var fileShow = split;
+                  var file_path = that.fileShow_(fileShow);
+                  iv2.iviewer('loadImage', file_path);
+                  return false;
+                });
+                $("#chimg_down").click(function(){
+                  index--;
+                  if(index<0){
+                    index=that.picFile.length-1;
+                  }
+                  var split = that.picFile[index] ;
+                  var fileShow = split;
+                  var file_path = that.fileShow_(fileShow);
+                  iv2.iviewer('loadImage', file_path);
+                  return false;
+                });
+              }
+            }else{
+              that.id_div = false;
+              that.isPic_ = false;
+              that.isPdf = false;
+              that.isShow = false;
+              that.isNull = true;
+            }
+          })
+        }
+      },
+      fileShow_:function(fileShow){
+        var _this = this;
+        _this.filePath = basePath4 + "preview/" + fileShow
+        return _this.filePath;
+      },
+      showName :function (name){
+        if(name == "1"){
+          return "变更证明";
+        } else if(name == "2"){
+          return "变更银行卡协议";
+        }else if(name == "3"){
+          return "银行卡复印件";
+        }else{
+          return "身份证件";
+        }
+      }
+    },
+    mounted: function () {
+      var that  = this;
+      that.clickMe();
+      that.setUploadedFiles();
+    },
+  });
+</script>
+</body>
+</html>

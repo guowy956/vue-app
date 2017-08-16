@@ -1,0 +1,70 @@
+span.important{
+  color: red;
+  padding-right: 3px;
+}
+table.table input{
+  border: none;
+  text-align: center;
+}
+.col-sm-10{
+    width: 82% !important;
+}
+.col-sm-2 {
+    width: 17% !important;
+}
+
+.hr-line-dashed{
+  margin: 10px 0;
+}
+.help-block{
+  margin-top: 7px !important;
+}
+/*input.picture{*/
+    /*width: 92%;*/
+    /*display: inline-block;*/
+/*}*/
+/*table{*/
+    /*width: 100%;*/
+    /*text-align: center;*/
+    /*border:1px solid #e5e6e7 !important;*/
+    /*margin: 0 auto;*/
+/*}*/
+/*table.active{*/
+    /*height: 300px;*/
+/*}*/
+/*table.active input{*/
+    /*border: 0;*/
+/*}*/
+/*table.active_list{*/
+    /*!*height: 600px;*!*/
+/*}*/
+/*table.active_list tr{*/
+    /*height: 38px;*/
+/*}*/
+/*table.active_list .list_title{*/
+    /*width: 3%;*/
+/*}*/
+/*table.active_list .list_name{*/
+    /*width: 15%;*/
+/*}*/
+/*table.active_list .list_width{*/
+    /*width: 7%;*/
+/*}*/
+/*table.active_list .list_width2{*/
+    /*width: 11%;*/
+/*}*/
+/*table th{*/
+    /*text-align: center;*/
+/*}*/
+/*p.active_p{*/
+    /*margin: 0px;*/
+/*}*/
+/*p.active_p button{*/
+    /*margin: 5px;*/
+/*}*/
+/*p.active_p input{*/
+    /*margin-left: 5px;*/
+    /*margin-right: 5px;*/
+/*}*/
+
+

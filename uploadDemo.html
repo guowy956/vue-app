@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="static\js\jquery.min.js"></script>
+    <script type="text/javascript" src="static\js\jquery.form.js"></script>
+</head>
+<body>
+<form method="post" action="https://localhost:7443/upload/activity?fileUploadId=7&groupId=10&activityId=20&functionKey=step1&elementKey=input1" enctype="multipart/form-data" id="form1">
+  <input name="input1" id="qdctvfile11" type="file">
+  <input type="button" onclick="eventStart()" value="upload">
+</form>
+<script type="text/javascript">
+  $("#form1").ajaxForm({
+    beforeSerialize: function () {
+      /*var filepath = $("#qdctvfile11").val()
+      var extStart = filepath.lastIndexOf(".");
+      var ext = filepath.substring(extStart, filepath.length).toUpperCase();
+      if (ext != ".PNG" && ext != ".JPG") {
+       alert("图片仅支持png,jpg格式");
+       $("#qdctvfile11").val("");
+       return false;
+       }*/
+    },
+    success: function (data) {
+      alert(data);
+    }
+  });
+  function eventStart(obj) {
+    $("#form1").submit();
+  }
+</script>
+</body>
+</html>

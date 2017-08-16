@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<link rel="shortcut icon" href="favicon.ico">
+<link href="../../../static\css\bootstrap.min.css?v=3.3.6" rel="stylesheet">
+<link href="../../../static\css\font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="../../../static\css\animate.min.css" rel="stylesheet">
+<link href="../../../static\css\style.min.css?v=4.1.0" rel="stylesheet">
+<link href="../../../static\plugins\zTree_v3\css\zTreeStyle\zTreeStyle.css" rel="stylesheet">
+<link rel="stylesheet" href="../../../static\css\jquery.filer-dragdropbox-theme.css">
+<link rel="stylesheet" href="../../../static\css\jquery.filer.css">
+<link rel="stylesheet" href="../../../static\css\jquery-filer.css">
+<link rel="stylesheet" href="../../../static/css/swiper/swiper-3.4.2.min.css">
+<link href="../../../static/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="../../../static\css\jquery.dataTables.min.css">
+<script type="text/javascript" src="../../../static\js\jquery.min.js?v=2.1.4"></script>
+<script type="text/javascript" src="../../../static\js\bootstrap.min.js?v=3.3.6"></script>
+<script type="text/javascript" src="../../../static\js\plugins\metisMenu\jquery.metisMenu.js"></script>
+<script type="text/javascript" src="../../../static\js\plugins\slimscroll\jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="../../../static\js\plugins\layer\layer.min.js"></script>
+<script type="text/javascript" src="../../../static\js\contabs.min.js"></script>
+<script type="text/javascript" src="../../../static\js\plugins\pace\pace.min.js"></script>
+<script type="text/javascript" src="../../../static\js\content.min.js"></script>
+<script type="text/javascript" src="../../../static\js\content.min.js?v=1.0.0"></script>
+<script type="text/javascript" src="../../../static\js\plugins\validate\jquery.validate.min.js"></script>
+<script type="text/javascript" src="../../../static\js\plugins\validate\messages_zh.min.js"></script>
+<script type="text/javascript" src="../../../static\plugins\zTree_v3\js\jquery.ztree.core.js"></script>
+<script type="text/javascript" src="../../../static\plugins\zTree_v3\js\jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="../../../static\plugins\zTree_v3\js\jquery.ztree.exedit.js"></script>
+<script type="text/javascript" src="../../../static\plugins\select2\select2.js"></script>
+<script type="text/javascript" src="../../../static\plugins\select2\select2_locale_zh-CN.js"></script>
+<script type="text/javascript" src="../../../static\js\Map.js"></script>
+<script type="text/javascript" src="../../../static\js\common.js"></script>
+
+<script type="text/javascript" src="../../../static\js\plugins\jqueryFileUpload\vendor\jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../../../static\js\plugins\jqueryFileUpload\jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="../../../static\js\plugins\jqueryFileUpload\jquery.fileupload.js"></script>
+<script type="text/javascript" src="../../../static\js\plugins\iCheck\icheck.min.js"></script>
+<script type="text/javascript" src="../../../static\js\toMoney.js"></script>
+<script type="text/javascript" src="../../../static\js\loginHandler.js"></script>
+<script type="text/javascript" src="../../../static\js\jquery.filer.min.js"></script>
+<script type="text/javascript" src="../../../static/js/swiper/swiper-3.4.2.min.js"></script>
+<script type="text/javascript" src="../../../static/plugins/bootstrap-datetimepicker/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../static/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../../static/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../../static\js\jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../../static\js\dataTables.fixedColumns.min.js"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+
+<script type="text/javascript" src="../../../static\js\lun\jquery.js"></script>
+
+<script type="text/javascript" src="../../../static\js\lun\jqueryui.js"></script>
+<script type="text/javascript" src="../../../static\js\lun\jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="../../../static\js\lun\jquery.iviewer.js"></script>
+<link href="../../../static\css\lun\jquery.iviewer.css" rel="stylesheet">
+
+<style type="text/css">
+  .viewer {
+    width: 900px;
+    height: 830px;
+    position: relative;
+  }
+  #idContainer {
+    border: 1px solid #000;
+    width: 800px;
+    height: 800px;
+    background: #FFF center no-repeat;
+  }
+  #idContainer img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul, li {
+    list-style: none;
+  }
+
+  .tabClick {
+    background: #f3f3f3;
+    overflow: hidden;
+  }
+
+  .tabClick li {
+    height: 40px;
+    line-height: 40px;
+    width: 50%;
+    float: left;
+    text-align: center;
+  }
+
+  .tabClick li.active {
+    color: white;
+    transition: 0.1s;
+    font-weight: bold;
+    background-color:gray
+  }
+  .tabList {
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+  <div class="tabCon">
+    <div class="tabBox">
+      <div class="tabList" id="tab_img" v-if="tab_img">
+        <div align="center">
+          <!--<div id="idContainer"><img v-bind:src="filePath" align="center"/></div>-->
+          <div id="viewer2" class="viewer" style="width: 70%;"></div>
+        </div>
+      </div>
+      <div class="tabList" id="tab_pdf" v-if="tab_pdf">
+        <div id="iframeDiv">
+          <embed src="" id="playControl"  style="width: 100% ; height: 690px"  type="application/pdf"/>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<br />
+<script>
+  new Vue({
+    el: '#wrap',
+    data: {
+      filePath:"",
+      tab_pdf:true,
+      tab_img:true,
+    },
+    methods: {
+      clickMe: function(){
+        this.filePath = this.GetQueryString("filePath");
+      },
+      GetQueryString: function (name){
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+      },
+      TabClickPdf: function (obj) {
+        $("#pic").removeClass("active");
+        $("#pdf").addClass("active");
+        var typeStr = $("#pdf").attr("ftype");
+        $(".tabList").hide();
+        $("#tab_" + typeStr + "").show();
+      },
+      TabClickPic: function (obj) {
+        $("#pdf").removeClass("active");
+        $("#pic").addClass("active");
+        var typeStr = $("#pic").attr("ftype");
+        console.log(typeStr);
+        $(".tabList").hide();
+        $("#tab_" + typeStr + "").show();
+      }
+    },
+    mounted: function () {
+      var that  = this;
+      that.clickMe();
+      var number = that.filePath.slice(that.filePath.lastIndexOf('/') + 1);
+      if(number == "pdf"){
+        $("#playControl").attr('src', that.filePath);
+        that.tab_img = false;
+        that.tab_pdf = true;
+      }else{
+        that.tab_pdf = false;
+        var iv2 = $("#viewer2").iviewer(
+          {
+            src: that.filePath,
+          });
+      }
+    },
+  });
+</script>
+</body>
+</html>
